@@ -141,13 +141,13 @@ function restore
 
     # Uninstall the latest version of the Wazuh-Agent.
     uninstall_wazuh
-    $counter = 6
+    $counter = 15
 
     do
     {
         write-output "$(Get-Date -format u) - Waiting for the uninstallation end." >> .\upgrade\upgrade.log
         $counter--
-        Start-Sleep 5
+        Start-Sleep 10
      } While((is_wazuh_installed) -And $counter -gt 0)
 
     # Install the former version of the Wazuh-Agent
